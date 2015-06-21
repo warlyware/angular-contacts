@@ -1,0 +1,25 @@
+
+body {
+  background-color: black !important;
+  color: #9DCAF0 !important;
+}
+
+form {
+  margin-top: 20px;
+}
+
+table {
+  margin-top: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 3px;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#firstNameInput, #lastNameInput, #phoneInput, #emailInput {
+  margin-bottom: 5px;
+}

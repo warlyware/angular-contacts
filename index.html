@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="contactsApp" ng-controller="ContactsCtrl">
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <script src="angular-md5.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4">
+          <h3 class="text-center">Add Contact</h3>
+          <form class="form">
+            <input id="firstNameInput" type="text" ng-model="firstNameInput" placeholder="First Name">
+            <input id="lastNameInput" type="text" ng-model="lastNameInput" placeholder="Last Name">
+            <input id="phoneInput" type="text" ng-model="phoneInput" placeholder="Phone Number">
+            <input id="emailInput" type="text" ng-model="emailInput" placeholder="Email Address">
+            <button class="btn btn-primary center-block" ng-click="addContact()">Add Contact</button>  
+          </form>
+        </div>
+        <div class="col-xs-8">
+          <h3 class="text-center">Contacts</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Gravatar</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="contact in contacts">
+                <td>{{contact.gravitar}}</td>
+                <td>{{contact.firstName}} {{contact.lastName}}</td>
+                <td>{{contact.phone}}</td>
+                <td>{{contact.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
