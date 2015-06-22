@@ -1,7 +1,4 @@
-var contactsData = [
-  { firstName: 'Dan', lastName: 'Ward', phone: '352-867-5309', email: 'danward@gmail.com'},
-  { firstName: 'Ron', lastName: 'Johnson', phone: '555-867-5309', email: 'r.johnson@gmail.com'}
-];
+var contactsData = [];
 
 
 var app = angular.module("contactsApp", []);
@@ -11,12 +8,21 @@ app.controller("ContactsCtrl", function($scope) {
 
   $scope.addContact = function() {
     console.log('add contact');
+    var userHash = CryptoJS.MD5($scope.emailInput);
+    var userHashString = userHash.toString(CryptoJS.enc.Hex);
+    console.log(userHashString);
+    $scope.hashMsg = userHashString;
     var newContact = {
+      gravitarHash: userHashString,
       firstName: $scope.firstNameInput,
       lastName: $scope.lastNameInput,
       phone: $scope.phoneInput,
       email: $scope.emailInput
     };
     contactsData.push(newContact);
+  }
+
+  $scope.editContract = function() {
+    console.log('edit contact');
   }
 });

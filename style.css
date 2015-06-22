@@ -12,6 +12,11 @@ table {
   margin-top: 12px;
 }
 
+td {
+  vertical-align: middle !important;
+  font-size: 1.6em;
+}
+
 input {
   width: 100%;
   padding: 3px;
@@ -22,4 +27,12 @@ input {
 
 #firstNameInput, #lastNameInput, #phoneInput, #emailInput {
   margin-bottom: 5px;
+}
+
+#gravatarImg {
+  border-radius: 30px;
+}
+
+#contactBtn {
+  margin-top: 10px
 }
